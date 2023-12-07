@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: loan-amortization
+Version: 1.0.0
+Summary: A Python package for loan amortization calculations
+Author: Sir_Analyst
+Author-email: sir.data.analyst@gmail.com
+Requires-Python: >=3.6

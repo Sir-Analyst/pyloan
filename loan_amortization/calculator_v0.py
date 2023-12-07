@@ -1,6 +1,5 @@
 # Pyloan
 # calculator.py
-import pandas as pd
 
 def calculate_amortization(principal, annual_interest_rate, years):
     r = annual_interest_rate / 100 / 12  # Monthly interest rate
@@ -11,18 +10,19 @@ def calculate_amortization(principal, annual_interest_rate, years):
 
     # Generate amortization schedule
     balance = principal
-    periods = []
+    amortization_schedule = []
     for i in range(1, n + 1):
         interest = balance * r
         principal_payment = monthly_payment - interest
         balance -= principal_payment
-        periods.append([i, round(monthly_payment, 2), round(interest, 2), round(principal_payment, 2), round(balance, 2)])
-
-    # Create a DataFrame using Pandas
-    columns = ["Period", "Monthly Payment", "Interest", "Principal", "Balance"]
-    amortization_table = pd.DataFrame(periods, columns=columns)
+        amortization_schedule.append({
+            "Month": i,
+            "Balance": round(balance, 2),
+            "Principal": round(principal_payment, 2),
+            "Interest": round(interest, 2)
+        })
 
     return {
         "MonthlyPayment": round(monthly_payment, 2),
-        "AmortizationTable": amortization_table
+        "AmortizationSchedule": amortization_schedule
     }
