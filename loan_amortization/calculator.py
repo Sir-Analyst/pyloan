@@ -1,4 +1,3 @@
-# Pyloan
 # calculator.py
 import pandas as pd
 
@@ -22,7 +21,8 @@ def calculate_amortization(principal, annual_interest_rate, years):
     columns = ["Period", "Monthly Payment", "Interest", "Principal", "Balance"]
     amortization_table = pd.DataFrame(periods, columns=columns)
 
+    # Return a dictionary containing the AmortizationTable key
     return {
         "MonthlyPayment": round(monthly_payment, 2),
-        "AmortizationTable": amortization_table
+        "AmortizationTable": amortization_table.to_dict('records')  # Convert DataFrame to a list of dictionaries
     }
