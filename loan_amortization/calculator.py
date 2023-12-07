@@ -1,5 +1,4 @@
 # calculator.py
-import pandas as pd
 
 def calculate_amortization(principal, annual_interest_rate, years):
     r = annual_interest_rate / 100 / 12  # Monthly interest rate
@@ -10,19 +9,22 @@ def calculate_amortization(principal, annual_interest_rate, years):
 
     # Generate amortization schedule
     balance = principal
-    periods = []
+    amortization_table = []
     for i in range(1, n + 1):
         interest = balance * r
         principal_payment = monthly_payment - interest
         balance -= principal_payment
-        periods.append([i, round(monthly_payment, 2), round(interest, 2), round(principal_payment, 2), round(balance, 2)])
-
-    # Create a DataFrame using Pandas
-    columns = ["Period", "Monthly Payment", "Interest", "Principal", "Balance"]
-    amortization_table = pd.DataFrame(periods, columns=columns)
+        period_info = {
+            "Period": i,
+            "Monthly Payment": round(monthly_payment, 2),
+            "Interest": round(interest, 2),
+            "Principal": round(principal_payment, 2),
+            "Balance": round(balance, 2)
+        }
+        amortization_table.append(period_info)
 
     # Return a dictionary containing the AmortizationTable key
     return {
         "MonthlyPayment": round(monthly_payment, 2),
-        "AmortizationTable": amortization_table.to_dict('records')  # Convert DataFrame to a list of dictionaries
+        "AmortizationTable": amortization_table
     }

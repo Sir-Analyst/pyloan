@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-loan-amortization = {file = ".", editable = true}
 pandas = "*"
+loan-amortization = {file = ".", editable = true}
 
 [dev-packages]
 
