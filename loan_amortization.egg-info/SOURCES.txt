@@ -3,7 +3,12 @@ setup.py
 loan_amortization/__init__.py
 loan_amortization/calculator.py
 loan_amortization/calculator_v0.py
+loan_amortization/other_functions.py
 loan_amortization.egg-info/PKG-INFO
 loan_amortization.egg-info/SOURCES.txt
 loan_amortization.egg-info/dependency_links.txt
 loan_amortization.egg-info/top_level.txt
+loan_app/__init__.py
+loan_app/loan_app.py
+loan_app/loan_functions.py
+loan_app/gui/__init__.py
