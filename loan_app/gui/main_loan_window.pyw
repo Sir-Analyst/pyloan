@@ -1,5 +1,5 @@
 import tkinter as tk
-from PIL import Image, ImageTk # Import the Image and ImageTk modules
+from pillow import Image, ImageTk # Import the Image and ImageTk modules
 import pandas as pd
 import matplotlib.pyplot as plt
 
