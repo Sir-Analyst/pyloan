@@ -1,19 +1,17 @@
 import tkinter as tk
-from PIL import Image, ImageTk # Import the Image and ImageTk modules
-import pandas as pd
-import matplotlib.pyplot as plt
+from PIL import Image, ImageTk
 
-class LoanManagerApp(tk.Tk):
+class FullScreenApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Loan Manager")
-        self.geometry("800x600")
+        self.attributes("-fullscreen", True)  # Set fullscreen attribute
+        self.bind("<Escape>", self.quit_fullscreen)  # Bind Escape key to exit fullscreen
         self.configure(background="blue")
 
- # Set the window icon
+        # Set the window icon
         icon_path = r"C:\Users\smahd\OneDrive\Desktop\pyloan\loan_app\resources\Loan_icon.jpeg"
-        img=Image.open(icon_path)
-        #self.iconbitmap(icon_path)  # Update this path to your icon's location
+        img = Image.open(icon_path)
         self.iconphoto(False, ImageTk.PhotoImage(img))
 
         self.menu = tk.Menu(self)
@@ -45,10 +43,12 @@ class LoanManagerApp(tk.Tk):
         # Functionality to display current loans
         pass
 
+    def quit_fullscreen(self, event):
+        self.attributes("-fullscreen", False)  # Exit fullscreen
+
 def main():
-    app = LoanManagerApp()
+    app = FullScreenApp()
     app.mainloop()
 
 if __name__ == "__main__":
     main()
- 
