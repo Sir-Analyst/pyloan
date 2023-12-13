@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 pandas = "*"
-loan-amortization = {file = ".", editable = true}
-pillow = "*"
-tk = "*"
-numpy = "*"
 matplotlib = "*"
-pyinstaller = "*"
+numpy = "*"
+plotly = "*"
+seaborn = "*"
+"plotly.express" = "*"
+pandas-datareader = "*"
 
 [dev-packages]
 
