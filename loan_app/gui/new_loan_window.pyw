@@ -4,35 +4,35 @@ class NewLoanWindow(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("New Loan")
-        self.geometry("400x300")  # Adjust the window size as needed
-        self.configure(background="white")  # Set the background color
+        self.geometry("800x500")  # Adjust the window size as needed
+        self.configure(background="Blue")  # Set the background color
         
         # Creating widgets for entering loan details
-        tk.Label(self, text="Starting Date").pack()
+        tk.Label(self, text="Starting Date").pack(anchor='w')
         self.starting_date_entry = tk.Entry(self)
-        self.starting_date_entry.pack()
+        self.starting_date_entry.pack(anchor='w')
 
-        tk.Label(self, text="Principal Amount").pack()
+        tk.Label(self, text="Principal Amount").pack(anchor='w')
         self.principal_amount_entry = tk.Entry(self)
-        self.principal_amount_entry.pack()
+        self.principal_amount_entry.pack(anchor='w')
 
-        tk.Label(self, text="Annual Interest").pack()
+        tk.Label(self, text="Annual Interest").pack(anchor='w')
         self.annual_interest_entry = tk.Entry(self)
-        self.annual_interest_entry.pack()
+        self.annual_interest_entry.pack(anchor='w')
 
-        tk.Label(self, text="Number of Payments").pack()
+        tk.Label(self, text="Number of Payments").pack(anchor='w')
         self.num_payments_entry = tk.Entry(self)
-        self.num_payments_entry.pack()
+        self.num_payments_entry.pack(anchor='w')
 
         # Radio buttons for payment frequency
         self.payment_frequency = tk.StringVar(value="Annual")  # Default value
-        tk.Radiobutton(self, text="Annual", variable=self.payment_frequency, value="Annual").pack()
-        tk.Radiobutton(self, text="Monthly", variable=self.payment_frequency, value="Monthly").pack()
-        tk.Radiobutton(self, text="Weekly", variable=self.payment_frequency, value="Weekly").pack()
-        tk.Radiobutton(self, text="Daily", variable=self.payment_frequency, value="Daily").pack()
+        tk.Radiobutton(self, text="Annual", variable=self.payment_frequency, value="Annual").pack(anchor='w')
+        tk.Radiobutton(self, text="Monthly", variable=self.payment_frequency, value="Monthly").pack(anchor='w')
+        tk.Radiobutton(self, text="Weekly", variable=self.payment_frequency, value="Weekly").pack(anchor='w')
+        tk.Radiobutton(self, text="Daily", variable=self.payment_frequency, value="Daily").pack(anchor='w')
 
         # Button to calculate and display loan details
-        tk.Button(self, text="Calculate Loan", command=self.calculate_loan).pack()
+        tk.Button(self, text="Calculate Loan", command=self.calculate_loan).pack(anchor='w')
 
     def calculate_loan(self):
         # Get the entered loan details and perform necessary calculations
