@@ -35,12 +35,13 @@ class FullScreenApp(tk.Tk):
         # Add loan details table, charts, and interactivity
         # ... (code for dashboard layout)
 
-    def add_new_loan(self):
-        def add_new_loan_window(self):  # Modified method
+def add_new_loan(self):
+    def add_new_loan_window(self):  # Modified method
         new_loan_window = tk.Toplevel(self)
         new_loan_window.title("New Loan")
-        # Create widgets for entering loan details in the new window
-        # ...
+    # Create widgets for entering loan details in the new window
+    # ...
+    add_new_loan_window(self)
 
     def display_current_loans(self):
         # Functionality to display current loans
