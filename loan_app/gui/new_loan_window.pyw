@@ -8,19 +8,17 @@ class NewLoanWindow(tk.Tk):
         self.configure(background="white")  # Set the background color
 
         fields = [
-            ("Starting Date", tk.Entry),
-            ("Principal Amount", tk.Entry),
-            ("Annual Interest", tk.Entry),
-            ("Number of Payments", tk.Entry)
+            "Starting Date",
+            "Principal Amount",
+            "Annual Interest",
+            "Number of Payments"
         ]
 
-        for label_text, widget_type in fields:
-            frame = tk.Frame(self, bg='white')
-            frame.pack(fill=tk.X)
-            label = tk.Label(frame, text=label_text, bg='white', width=15, anchor='w')
-            label.pack(side=tk.LEFT, padx=10, pady=5)
-            entry = widget_type(frame)
-            entry.pack(fill=tk.X, padx=10, expand=True)
+        for idx, label_text in enumerate(fields):
+            label = tk.Label(self, text=label_text, bg='white')
+            label.grid(row=idx, column=0, padx=10, pady=5, sticky="w")
+            entry = tk.Entry(self)
+            entry.grid(row=idx, column=1, padx=10, pady=5, sticky="ew")
 
 def main():
     new_loan_window = NewLoanWindow()
