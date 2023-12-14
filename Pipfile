@@ -11,6 +11,8 @@ plotly = "*"
 seaborn = "*"
 "plotly.express" = "*"
 pandas-datareader = "*"
+pillow = "*"
+pyinstaller = "*"
 
 [dev-packages]
 

@@ -1,5 +1,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
+from new_loan_window import NewLoanWindow
+
 
 class FullScreenApp(tk.Tk):
     def __init__(self):
