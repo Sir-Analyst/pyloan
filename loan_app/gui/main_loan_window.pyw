@@ -37,6 +37,7 @@ class FullScreenApp(tk.Tk):
 
     def add_new_loan(self):
         new_loan_window = NewLoanWindow()
+       # new_loan_window = tk.Toplevel()  # Create a Toplevel window
         new_loan_window.mainloop()
 
     def display_current_loans(self):
