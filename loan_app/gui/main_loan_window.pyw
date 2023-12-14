@@ -1,6 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
-from new_loan_window import NewLoanWindow
+
 
 
 class FullScreenApp(tk.Tk):
@@ -37,10 +37,7 @@ class FullScreenApp(tk.Tk):
         # Add loan details table, charts, and interactivity
         # ... (code for dashboard layout)
 
-    def add_new_loan(self):
-        new_loan_window = NewLoanWindow()
-       # new_loan_window = tk.Toplevel()  # Create a Toplevel window
-        new_loan_window.mainloop()
+
 
     def display_current_loans(self):
         # Functionality to display current loans
